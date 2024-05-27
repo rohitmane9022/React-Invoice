@@ -20,7 +20,7 @@ const FormData = () => {
     pinCode,
     setpinCode,
     orderNumber,
-    serorderNumber,
+    
   
     setUtCode,
     setCustomername,
@@ -33,7 +33,7 @@ const FormData = () => {
     setPan,
     GstNumber,
     setGstNumber,
-    setDescription,taxType,description,unitPrice,setUnitPrice,quantity,setQuantity,taxRate,setTaxRate,setTaxType,handleImageChange,}= useData()
+    setDescription,taxType,description,unitPrice,setUnitPrice,quantity,setQuantity,taxRate,setTaxRate,setTaxType,handleImageChange,setOrderNumber}= useData()
     
 
     
@@ -50,10 +50,7 @@ const FormData = () => {
       <h1>Address One:</h1>
       <input className="text-sm py-2 px-4  ring-2 ring-sky-300 focus:outline-none focus:ring focus:ring-sky-500 " type="text" required placeholder="Enter Address one" value={AddressOne} onChange={(e)=>setAddressOne(e.target.value)}/>
       </div>
-      <div>
-      <h1>Address two:</h1>
-      <input className="text-sm py-2 px-4  ring-2 ring-sky-300 focus:outline-none focus:ring focus:ring-sky-500 " type="text" required placeholder="Enter Address two" value={Addresstrwo} onChange={(e)=>setAddresstrwo(e.target.value)}/>
-      </div>
+      
       <div>
       <h1>City:</h1>
       <input className="text-sm py-2 px-4  ring-2 ring-sky-300 focus:outline-none focus:ring focus:ring-sky-500 " type="text" required placeholder="Enter City" value={City} onChange={(e)=>setCity(e.target.value)}/>
@@ -77,7 +74,7 @@ const FormData = () => {
       </div>
       <div>
       <h1>Order Date:</h1>
-      <input className="text-sm py-2 px-4  ring-2 ring-sky-300 focus:outline-none focus:ring focus:ring-sky-500 " type="date" required placeholder="Enter orderDate" value={orderNumber} onChange={(e)=>serorderNumber(e.target.value)}/>
+      <input className="text-sm py-2 px-4  ring-2 ring-sky-300 focus:outline-none focus:ring focus:ring-sky-500 " type="date" required placeholder="Enter orderDate" value={orderNumber} onChange={(e)=>setOrderNumber(e.target.value)}/>
       </div>
       </div>
       </div>
@@ -86,17 +83,14 @@ const FormData = () => {
         <h1 className="text-center font-medium">Customer Details</h1>
         <div className="flex flex-wrap mx-10 items-center gap-4">
       <div>  
-      <h1>Seller Name:</h1>
+      <h1>Customer Name:</h1>
       <input className="text-sm py-2 px-4  ring-2 ring-sky-300 focus:outline-none focus:ring focus:ring-sky-500 " type="text" required placeholder="Enter customer name" onChange={(e)=>setCustomername(e.target.value)}/>
       </div>
       <div>
       <h1>Address One:</h1>
       <input className="text-sm py-2 px-4  ring-2 ring-sky-300 focus:outline-none focus:ring focus:ring-sky-500 " type="text" required placeholder="Enter Address one" onChange={(e)=>setCustomerAddressOne(e.target.value)}/>
       </div>
-      <div>
-      <h1>Address two:</h1>
-      <input className="text-sm py-2 px-4  ring-2 ring-sky-300 focus:outline-none focus:ring focus:ring-sky-500 " type="text" required placeholder="Enter Address two" onChange={(e)=>setCustomerAddresstrwo(e.target.value)}/>
-      </div>
+      
       <div>
       <h1>City:</h1>
       <input className="text-sm py-2 px-4  ring-2 ring-sky-300 focus:outline-none focus:ring focus:ring-sky-500 " type="text" required placeholder="Enter City" onChange={(e)=>setCustomerCity(e.target.value)}/>

@@ -7,7 +7,7 @@ export default function App() {
   
    
   return (
-    <div className='flex w-full px-5 pt-10 ' >
+    <div className='flex w-full px-5 pt-5 ' >
     <FormData/>
       <InvoicePages/>
     </div>

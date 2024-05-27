@@ -8,7 +8,7 @@ const InvoicePages = () => {
   const {
     name,
     AddressOne,
-    Addresstrwo,
+    
     City,
     State,
     pinCode,
@@ -45,12 +45,13 @@ const InvoicePages = () => {
         console.error('Error generating PDF', error);
       });
   };
+  
 
   const totalAmount = items?.reduce((acc, item) => acc + (item.totalAmount || 0), 0);
   const amountInWords = numberToWords.toWords(totalAmount);
 
   return (
-    <div className="px-14 py-6 w-1/2 mx-auto">
+    <div className="px-14 w-1/2 mx-auto">
       <div ref={divRef} className="invoice-content">
         <div className="flex justify-between mb-4">
           <h1 className="text-3xl font-medium">Rohit.Invoice</h1>
@@ -65,7 +66,7 @@ const InvoicePages = () => {
             <h3 className="text-base font-bold">Sold By :</h3>
             <p>{name}</p>
             <p>{AddressOne}</p>
-            <p>{Addresstrwo}</p>
+            
             <div className="flex">
               <p>{City}, {State}, {pinCode}</p>
             </div>
@@ -75,7 +76,7 @@ const InvoicePages = () => {
             <h3 className="text-base font-bold">Billing Address :</h3>
             <p>{Customername}</p>
             <p>{CustomerAddressOne}</p>
-            <p>{CustomerAddresstrwo}</p>
+            
             <div className="flex">
               <p>{CustomerCity}, {CustomerState}, {CustomerpinCode}</p>
             </div>
