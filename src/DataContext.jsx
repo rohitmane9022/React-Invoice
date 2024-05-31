@@ -14,18 +14,18 @@ export const DataProvider = ({ children }) => {
   const [GstNumber, setGstNumber] = useState("09AGBPJ7615D1LY");
   const [orderNumber, setOrderNumber] = useState(null);
 
-  const [Customername, setCustomername] = useState("name");
-  const [CustomerAddressOne, setCustomerAddressOne] = useState("Address");
-  const [CustomerAddresstrwo, setCustomerAddresstrwo] = useState("Address");
-  const [CustomerCity, setCustomerCity] = useState("City");
-  const [CustomerState, setCustomerState] = useState("State");
+  const [Customername, setCustomername] = useState("Shyam Mane");
+  const [CustomerAddressOne, setCustomerAddressOne] = useState("Grand Road Near Station");
+ 
+  const [CustomerCity, setCustomerCity] = useState("Mumbai");
+  const [CustomerState, setCustomerState] = useState("Maharashtra");
   const [CustomerpinCode, setCustomerpinCode] = useState(100000);
 
-  const [description, setDescription] = useState('');
-  const [unitPrice, setUnitPrice] = useState();
-  const [quantity, setQuantity] = useState();
-  const [taxRate, setTaxRate] = useState();
-  const [taxType, setTaxType] = useState('');
+  const [description, setDescription] = useState('Pants');
+  const [unitPrice, setUnitPrice] = useState(500);
+  const [quantity, setQuantity] = useState(10);
+  const [taxRate, setTaxRate] = useState(18);
+  const [taxType, setTaxType] = useState('IGST');
   const [netAmount, setNetAmount] = useState();
   
   const [items, setItems] = useState([]);
@@ -53,11 +53,11 @@ export const DataProvider = ({ children }) => {
 
     setItems(prev=> [...prev, newItem]);
 
-    setDescription('');
+    setDescription("");
     setUnitPrice();
-    setQuantity(1);
+    setQuantity();
     setTaxRate();
-    setTaxType('');
+    setTaxType();
   };
   const handleImageChange = (e) => {
     const selectedImage = e.target.files[0];
@@ -72,7 +72,7 @@ export const DataProvider = ({ children }) => {
   return (
     <DataContext.Provider value={{
       name, setName, AddressOne, setAddressOne, Addresstrwo, setAddresstrwo, City, setCity, State, setState, pinCode, setPinCode, UtCode, setUtCode,
-      Customername, setCustomername, CustomerAddressOne, setCustomerAddressOne, CustomerAddresstrwo, setCustomerAddresstrwo, CustomerCity, setCustomerCity,
+      Customername, setCustomername, CustomerAddressOne, setCustomerAddressOne, CustomerCity, setCustomerCity,
       CustomerState, setCustomerState, CustomerpinCode, setCustomerpinCode, Pan, setPan, GstNumber, setGstNumber,
       description, setDescription, unitPrice, setUnitPrice, netAmount, quantity, setQuantity, taxRate, setTaxRate,
       taxType, setTaxType, orderNumber, setOrderNumber, addItem, items, setItems,image, setImage,handleImageChange,handleImageUpload

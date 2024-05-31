@@ -11,8 +11,7 @@ const FormData = () => {
   
   const{name,setname,AddressOne,
     setAddressOne,
-    Addresstrwo,
-    setAddresstrwo,
+    
     City,
     setCity,
     State,
@@ -21,13 +20,18 @@ const FormData = () => {
     setpinCode,
     orderNumber,
     
-  
+    UtCode,
     setUtCode,
+    Customername,
     setCustomername,
+    CustomerAddressOne,
     setCustomerAddressOne,
-    setCustomerAddresstrwo,
+    CustomerCity,
+   
     setCustomerCity,
-    setCustomerState,
+    CustomerState,
+    setCustomerState,CustomerpinCode,
+
     setCustomerpinCode,
     Pan,
     setPan,
@@ -84,28 +88,28 @@ const FormData = () => {
         <div className="flex flex-wrap mx-10 items-center gap-4">
       <div>  
       <h1>Customer Name:</h1>
-      <input className="text-sm py-2 px-4  ring-2 ring-sky-300 focus:outline-none focus:ring focus:ring-sky-500 " type="text" required placeholder="Enter customer name" onChange={(e)=>setCustomername(e.target.value)}/>
+      <input className="text-sm py-2 px-4  ring-2 ring-sky-300 focus:outline-none focus:ring focus:ring-sky-500 " type="text" required placeholder="Enter customer name" value={Customername} onChange={(e)=>setCustomername(e.target.value)}/>
       </div>
       <div>
       <h1>Address One:</h1>
-      <input className="text-sm py-2 px-4  ring-2 ring-sky-300 focus:outline-none focus:ring focus:ring-sky-500 " type="text" required placeholder="Enter Address one" onChange={(e)=>setCustomerAddressOne(e.target.value)}/>
+      <input className="text-sm py-2 px-4  ring-2 ring-sky-300 focus:outline-none focus:ring focus:ring-sky-500 " type="text" required placeholder="Enter Address one" value={CustomerAddressOne} onChange={(e)=>setCustomerAddressOne(e.target.value)}/>
       </div>
       
       <div>
       <h1>City:</h1>
-      <input className="text-sm py-2 px-4  ring-2 ring-sky-300 focus:outline-none focus:ring focus:ring-sky-500 " type="text" required placeholder="Enter City" onChange={(e)=>setCustomerCity(e.target.value)}/>
+      <input className="text-sm py-2 px-4  ring-2 ring-sky-300 focus:outline-none focus:ring focus:ring-sky-500 " type="text" required placeholder="Enter City" value={CustomerCity} onChange={(e)=>setCustomerCity(e.target.value)}/>
       </div>
       <div>
       <h1>State:</h1>
-      <input className="text-sm py-2 px-4  ring-2 ring-sky-300 focus:outline-none focus:ring focus:ring-sky-500 " type="text" required placeholder="Enter Address three" onChange={(e)=>setCustomerState(e.target.value)}/>
+      <input className="text-sm py-2 px-4  ring-2 ring-sky-300 focus:outline-none focus:ring focus:ring-sky-500 " type="text" required placeholder="Enter State" value={CustomerState} onChange={(e)=>setCustomerState(e.target.value)}/>
       </div>
       <div>
       <h1>PinCode:</h1>
-      <input className="text-sm py-2 px-4  ring-2 ring-sky-300 focus:outline-none focus:ring focus:ring-sky-500 " type="number" required placeholder="Enter PinCode" onChange={(e)=>setCustomerpinCode(e.target.value)}/>
+      <input className="text-sm py-2 px-4  ring-2 ring-sky-300 focus:outline-none focus:ring focus:ring-sky-500 " type="number" required placeholder="Enter PinCode" value={CustomerpinCode} onChange={(e)=>setCustomerpinCode(e.target.value)}/>
       </div>
       <div>
       <h1>State/UT Code:</h1>
-      <input className="text-sm py-2 px-4  ring-2 ring-sky-300 focus:outline-none focus:ring focus:ring-sky-500 " type="number" required placeholder="Enter PinCode" onChange={(e)=>setUtCode(e.target.value)}/>
+      <input className="text-sm py-2 px-4  ring-2 ring-sky-300 focus:outline-none focus:ring focus:ring-sky-500 " type="number" required placeholder="Enter UT/Code" value={UtCode} onChange={(e)=>setUtCode(e.target.value)}/>
       </div>
       
       </div>
@@ -121,7 +125,7 @@ const FormData = () => {
       </div>
       <div>
         <h3>Qty</h3>
-        <input className="text-sm py-2 px-4  ring-2 ring-sky-300 focus:outline-none focus:ring focus:ring-sky-500 " type="number" value={quantity} onChange={e => setQuantity(parseInt(e.target.value) || 1)} />
+        <input className="text-sm py-2 px-4  ring-2 ring-sky-300 focus:outline-none focus:ring focus:ring-sky-500 " type="number"    onChange={e => setQuantity(parseInt(e.target.value) || 1)} />
       </div>
       
       <div>

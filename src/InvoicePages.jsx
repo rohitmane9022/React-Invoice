@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import { useData } from "./DataContext";
 import numberToWords from 'number-to-words';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+
+import ReactToPrint from 'react-to-print';
 
 const InvoicePages = () => {
   const {
@@ -25,34 +25,19 @@ const InvoicePages = () => {
     items,
     image,
   } = useData();
+
   const divRef = useRef();
-
-  const handleDownloadPDF = () => {
-    const input = divRef.current;
-    html2canvas(input, { scale: 2, useCORS: true })
-      .then((canvas) => {
-        const imgData = canvas.toDataURL('image/png');
-        const pdf = new jsPDF('p', 'mm', 'a4');
-        const pdfWidth = pdf.internal.pageSize.getWidth();
-        // const pdfHeight = pdf.internal.pageSize.getHeight();
-        const imgWidth = pdfWidth - 20; // Leave a margin of 10mm on each side
-        const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-        pdf.addImage(imgData, 'PNG', 10, 10, imgWidth, imgHeight); // 10mm margin on each side
-        pdf.save('invoice.pdf');
-      })
-      .catch((error) => {
-        console.error('Error generating PDF', error);
-      });
-  };
-  
 
   const totalAmount = items?.reduce((acc, item) => acc + (item.totalAmount || 0), 0);
   const amountInWords = numberToWords.toWords(totalAmount);
 
   return (
-    <div className="px-14 w-1/2 mx-auto">
-      <div ref={divRef} className="invoice-content">
+    <main className="px-14 w-1/2 mx-auto">
+      <ReactToPrint 
+      trigger={()=> <button className="mt-4 bg-blue-500 text-white py-2 px-4 rounded">Print / Download</button>} 
+      content={()=>divRef.current}/>
+      
+      <div ref={divRef} className="invoice-content px-10 py-10">
         <div className="flex justify-between mb-4">
           <h1 className="text-3xl font-medium">Rohit.Invoice</h1>
           <div>
@@ -157,10 +142,8 @@ const InvoicePages = () => {
           <p className="font-semibold">Authorized Signatory:</p>
         </div>
       </div>
-      <button onClick={handleDownloadPDF} className="mt-4 bg-blue-500 text-white py-2 px-4 rounded">
-        Download PDF
-      </button>
-    </div>
+      
+    </main>
   );
 };
 
